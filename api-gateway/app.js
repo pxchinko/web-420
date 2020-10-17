@@ -1,3 +1,12 @@
+/*
+============================================
+; Title: api-gateway
+; Author: Professor Krasso
+; Date: October 18 2020
+; Modified By: Sarah Massie
+; Description: Making a REST API
+;===========================================
+*/
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
