@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
- var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 // database connection
