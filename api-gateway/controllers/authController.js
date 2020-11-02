@@ -1,3 +1,11 @@
+/*
+============================================
+; Title:  authController.js
+; Author: Sarah Massie
+; Date:   2 November 2020
+; Description: creating the user registration and token for REST
+;===========================================
+*/
 var User = require('../models/users');
 
 // Register a new user on POST

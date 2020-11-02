@@ -4,6 +4,16 @@
  * Module dependencies.
  */
 
+/*
+============================================
+; Title:  www
+; Author: Sarah Massie
+; Date:   2 November 2020
+; Modified by: Sarah Massie
+; Description: configuring the www port
+;===========================================
+*/
+
 var app = require('../app');
 var debug = require('debug')('api-gateway:server');
 var http = require('http');

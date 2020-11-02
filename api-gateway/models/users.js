@@ -1,3 +1,11 @@
+/*
+============================================
+; Title:  users.js
+; Author: Sarah Massie
+; Date:   2 November 2020
+; Description: creating user schema for username, password, and email
+;===========================================
+*/
 // fields: username, password, and email
 var mongoose = require('mongoose');
 var userSchema = new mongoose.Schema({

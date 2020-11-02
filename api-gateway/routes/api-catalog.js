@@ -1,3 +1,11 @@
+/*
+============================================
+; Title:  api-catalog.js
+; Author: Sarah Massie
+; Date:   2 November 2020
+; Description: routes for the authorization controller
+;===========================================
+*/
 // API Routes
 var express = require('express');
 var router = express.Router();

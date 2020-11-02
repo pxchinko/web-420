@@ -1,3 +1,11 @@
+/*
+============================================
+; Title:  index.js
+; Author: Sarah Massie
+; Date:   2 November 2020
+; Description: control page for the index
+;===========================================
+*/
 var express = require('express');
 var router = express.Router();
 
