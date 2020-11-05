@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
 /*
 ============================================
 ; Title:  www
@@ -13,6 +8,10 @@
 ; Description: configuring the www port
 ;===========================================
 */
+
+/**
+ * Module dependencies.
+ */
 
 var app = require('../app');
 var debug = require('debug')('api-gateway:server');
