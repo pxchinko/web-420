@@ -17,3 +17,9 @@ exports.user_register = function(req, res) {
 exports.user_token = function(req, res) {
     res.send('NOT IMPLEMENTED: User token lookup GET');
 };
+
+// user_token functions/require statements
+var User = require('../models/users');
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcryptjs');
+var config = require('../config');
