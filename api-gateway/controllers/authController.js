@@ -13,14 +13,13 @@ var User = require('../models/users');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var config = require('../config');
-const { restart } = require('nodemon');
 
 // Register a new user on POST
 exports.user_register = function(req, res) {
-  var secretPassword = bcrypt.hashSync(req.body.password, 8);
+  var hashedPassword = bcrypt.hashSync(req.body.password, 8);
   var newUser = new User ({
       username: req.body.username,
-      password: secretPassword,
+      password: hashedPassword,
       email: req.body.email
   })
 
@@ -38,6 +37,7 @@ exports.user_register = function(req, res) {
 
 // Verify token on GET
 exports.user_token = function(req, res) {
+
   var token = req.headers['x-access-token'];
 
   if (!token) return res.status(401).send({auth: false, message: 'No token provided'});

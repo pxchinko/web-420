@@ -13,11 +13,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var apiCatalog = require('./routes/api-catalog')
-
-var indexRouter = require('./routes/index');
-
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
+
+var indexRouter = require('./routes/index');
 
 // database connection
 const conn = 'mongodb+srv://admin:admin@buwebdev-cluster-1.eate3.mongodb.net/api-gateway?retryWrites=true&w=majority'
