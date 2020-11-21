@@ -71,3 +71,7 @@ exports.user_login = function(req, res) {
     res.status(200).send( {auth: true, token: token });
   })
 };
+
+exports.user_logout = function(req, res) {
+  res.status(200).send({ auth: false, token: null });
+}
