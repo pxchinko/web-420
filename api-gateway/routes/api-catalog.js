@@ -20,4 +20,7 @@ router.post('/auth/login', auth_controller.user_login);
 // GET request for verifying user tokens
 router.get('/auth/token', auth_controller.user_token);
 
+// GET request for logging out
+router.get('/auth/logout', auth_controller.user_logout);
+
 module.exports = router;
