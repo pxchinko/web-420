@@ -11,12 +11,13 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser')
 var logger = require('morgan');
-var apiCatalog = require('./routes/api-catalog')
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 var indexRouter = require('./routes/index');
+var apiCatalog = require('./routes/api-catalog')
 
 // database connection
 const conn = 'mongodb+srv://admin:admin@buwebdev-cluster-1.eate3.mongodb.net/api-gateway?retryWrites=true&w=majority'
@@ -38,8 +39,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', apiCatalog);

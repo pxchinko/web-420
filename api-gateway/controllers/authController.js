@@ -6,7 +6,6 @@
 ; Description: creating the user registration and token for REST
 ;===========================================
 */
-var User = require('../models/users');
 
 // user_token functions/require statements
 var User = require('../models/users');
@@ -56,16 +55,17 @@ exports.user_token = function(req, res) {
 };
 
 exports.user_login = function(req, res) {
+
   User.getOne(req.body.email, function(err, user) {
     if (err) return res.status(500).send('Error on server.');
     if (!user) return res.status(404).send('No user found.');
 
-    var validPassword = bcrypt.compareSync(req.body.password, user.password);
+    var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
 
-    if (!validPassword) return res.status(401).send({ auth: false, token: null});
+    if (!passwordIsValid) return res.status(401).send({ auth: false, token: null});
 
     var token = jwt.sign({ id: user._id}, config.web.secret, {
-      expiresIn: 86400 // expires in 24 hours
+        expiresIn: 86400 // expires in 24 hours
     });
 
     res.status(200).send( {auth: true, token: token });
